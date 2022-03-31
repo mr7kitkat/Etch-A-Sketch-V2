@@ -19,6 +19,10 @@ form.addEventListener('submit', function(e) {
 
 window.addEventListener('load', makeCanvas)
 size.addEventListener('input', makeCanvas)
+color.addEventListener('change', function(){
+    pencilBtn.style.backgroundColor = color.value;      
+})
+
 
 function makeCanvas() {
     s = size.valueAsNumber || 16;
@@ -82,6 +86,15 @@ function rainbow() {
     })
 }
 
+function resetEverything() {
+    const cells = document.querySelectorAll('div.cell');
+    cells.forEach(cell => {
+        cell.style.backgroundColor = '#ffffff';
+    })
+    form.reset();
+}
+
 pencilBtn.addEventListener('click', pencil);
 eraserBtn.addEventListener('click', eraser);
 rainbowBtn.addEventListener('click', rainbow);
+resetBtn.addEventListener('click', resetEverything);

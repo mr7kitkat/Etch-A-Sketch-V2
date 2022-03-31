@@ -4,7 +4,7 @@
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    color: white;
+    transition: 0.5s linear;
 }
 
 
@@ -19,7 +19,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
 
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -35,28 +35,86 @@ main {
 
 form {
     height: 50%;
-    width: 30%;
+    width: 22%;
     border-radius: 50px;
-    background: #f2f2f2;
+    background: #ffffff;
     box-shadow:  20px 20px 60px #cecece,
                 -20px -20px 60px #ffffff;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
 
 }
 
 .canvas {
     background-color: rgba(255, 255, 255);
     overflow: hidden;
-    outline: 0.5rem solid lightseagreen;
+    outline: 0.5rem solid rgba(255, 99, 71, 0.795);
     display: grid;
 }
 
 .canvas > * {
     height: 100%;
     width: 100%;
-    border: 1px solid rgba(211, 211, 211, 0.100);
+    border: 1px solid rgba(211, 211, 211, 0.150);
 }
 
-button {
-    color : teal;
+
+label, button {
+    width: 200px;
+    height: 30px;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
 }
 
+label > input {
+    width: 50%;
+    height: 28px;
+    outline: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+button img {
+    height: auto;
+    max-width: 28px;
+    margin: 0 0.25rem;
+}
+
+button:hover, label:hover {
+    background-color: lightblue;
+}
+
+
+#pencil {
+    position: relative;
+}
+
+
+#pencilChoice {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#pencilChoice label {
+    border: none;
+    width: 50%;
+    display: flex;
+    font-size: 1rem;
+}
+
+.choice {
+
+}
