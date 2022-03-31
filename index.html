@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main>
+        <form action="" class="menu" method="get" value="black">
+            <label for="size">
+                Size:
+                <input type="number" name="size" id="size" value="16">
+            </label>
+
+            <label for="color">
+                Color:
+                <input type="color" name="color" id="color">
+            </label>
+
+            <button id="pencil">Pencil</button>
+            <button id="rainbow">Rainbow</button>
+            <button id="eraser">Eraser</button>
+            <button id="reset" type="reset">reset</button>
+        </form>
+
+        <div class="canvas">
+
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
