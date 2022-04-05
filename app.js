@@ -6,8 +6,10 @@ const size = document.querySelector('#size');
 const color = document.querySelector('#color');
 const rainbowBtn = document.querySelector('#rainbow');
 const pencilBtn = document.querySelector('#pencil');
+// const pencilOption = document.querySelector('#pencilChoice');
 const eraserBtn = document.querySelector('#eraser');
 const resetBtn = document.querySelector('#reset');
+
 let s = size.valueAsNumber || 16;
 let height = main.clientHeight;
 let width = main.clientWidth;
@@ -18,9 +20,12 @@ form.addEventListener('submit', function(e) {
 })
 
 window.addEventListener('load', makeCanvas)
+window.addEventListener('resize', () => location.reload())
 size.addEventListener('input', makeCanvas)
+
 color.addEventListener('change', function(){
-    pencilBtn.style.backgroundColor = color.value;      
+    pencilBtn.style.backgroundColor = color.value;  
+    pencil();    
 })
 
 
@@ -60,6 +65,7 @@ function rainbowColor() {
 }
 
 function pencil() {
+    pencilBtn.style.backgroundColor = color.value;
     const cells = document.querySelectorAll('div.cell');
     cells.forEach(cell => {
         cell.addEventListener('mouseenter', function(e) {
@@ -91,10 +97,12 @@ function resetEverything() {
     cells.forEach(cell => {
         cell.style.backgroundColor = '#ffffff';
     })
-    form.reset();
+
+    location.reload();
 }
 
-pencilBtn.addEventListener('click', pencil);
 eraserBtn.addEventListener('click', eraser);
 rainbowBtn.addEventListener('click', rainbow);
+pencilBtn.addEventListener('click', pencil);
 resetBtn.addEventListener('click', resetEverything);
+    

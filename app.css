@@ -4,7 +4,7 @@
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    transition: 0.5s linear;
+    transition: 0.3s linear;
 }
 
 
@@ -25,21 +25,25 @@ body {
 
 main {
     height: 100%;
-    width: 100%;
+    max-height: 850px;
+    width: 80%;
+    max-width: 1280px;
     background-color: rgba(255, 255, 255, 0.5);
 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 form {
     height: 50%;
-    width: 22%;
-    border-radius: 50px;
+    width: 20%;
+    min-width: fit-content;
+    max-width: 250px;
+    border-radius: 5px;
     background: #ffffff;
-    box-shadow:  20px 20px 60px #cecece,
-                -20px -20px 60px #ffffff;
+    margin: 1rem;
 
     display: flex;
     flex-flow: column;
@@ -51,7 +55,6 @@ form {
 .canvas {
     background-color: rgba(255, 255, 255);
     overflow: hidden;
-    outline: 0.5rem solid rgba(255, 99, 71, 0.795);
     display: grid;
 }
 
@@ -62,12 +65,12 @@ form {
 }
 
 
-label, button {
-    width: 200px;
-    height: 30px;
+.buttons {
+    width: 150px;
+    height: 40px;
     padding: 0.5rem 1rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    border: none;
+    border-radius: 2rem;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -75,12 +78,13 @@ label, button {
     font-size: 1rem;
 }
 
-label > input {
+.buttons > input {
     width: 50%;
-    height: 28px;
+    height: 38px;
     outline: none;
     text-align: center;
     font-size: 1rem;
+    margin: .5rem;
 }
 
 
@@ -90,31 +94,32 @@ button img {
     margin: 0 0.25rem;
 }
 
-button:hover, label:hover {
-    background-color: lightblue;
+.buttons:hover {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #43c1ff, #39a2e4);
+    box-shadow:  2px 2px 6px #27709d,
+                -2px -2px 6px #57f8ff;
+}
+
+[for="size"],[for="color"] {
+    justify-content: space-between;
 }
 
 
-#pencil {
-    position: relative;
-}
+@media (max-width: 850px) {
+    main {
+        flex-direction: column;
+    }
 
+    form {
+        height: 30%;
+        width: 100%;
+        padding: 0.5rem;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin: 0.5rem auto;
+    }
 
-#pencilChoice {
-    position: absolute;
-    height: 100px;
-    width: 200px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-#pencilChoice label {
-    border: none;
-    width: 50%;
-    display: flex;
-    font-size: 1rem;
-}
-
-.choice {
 
 }
