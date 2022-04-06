@@ -107,14 +107,21 @@ button img {
 
 
 @media (max-width: 850px) {
+    body {
+        padding: 0;
+    }
+    
     main {
         flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0.5rem;
     }
 
     form {
         height: 30%;
         width: 100%;
-        padding: 0.5rem;
         align-items: center;
         flex-flow: row wrap;
         justify-content: space-evenly;

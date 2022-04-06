@@ -68,7 +68,7 @@ function pencil() {
     pencilBtn.style.backgroundColor = color.value;
     const cells = document.querySelectorAll('div.cell');
     cells.forEach(cell => {
-        cell.addEventListener('mouseenter', function(e) {
+        cell.addEventListener(('mouseenter'||'touchmove'), function(e) {
             e.target.style.backgroundColor = color.value;
         })
     })
@@ -77,7 +77,7 @@ function pencil() {
 function eraser() {
     const cells = document.querySelectorAll('div.cell');
     cells.forEach(cell => {
-        cell.addEventListener('mouseenter', function(e) {
+        cell.addEventListener(('mouseenter'||'touchmove'), function(e) {
             e.target.style.backgroundColor = 'rgba(255, 255, 255)';
         })
     })
@@ -86,7 +86,7 @@ function eraser() {
 function rainbow() {
     const cells = document.querySelectorAll('div.cell');
     cells.forEach(cell => {
-        cell.addEventListener('mouseenter', function(e) {
+        cell.addEventListener(('mouseenter'||'touchmove'), function(e) {
             e.target.style.backgroundColor = rainbowColor();
         })
     })
